@@ -51,15 +51,11 @@
 <body>
     <nav class="navbar">
         <div class="logo">MovieFlix</div>
-        <div class="search-box">
-            <input type="text" placeholder="Search">
-            <button>🔎</button>
-        </div>
         <ul class="nav-links">
             <li><a href="#102">Genres</a></li>
             <li><a href="{% url 'ComingSoon' %}">Coming Soon</a></li>
             <li><a href="{% url 'topMovies' %}">Top Picks</a></li>
-            <li><a href="#103">About Us</a></li>
+            <li><a href="{% url 'aboutus' %}">About Us</a></li>
         </ul>
         <div class="welcome-message">
             {% if not current_user.is_authenticated %}
@@ -222,6 +218,11 @@
     function scrollGallery(id, scrollAmount) {
         document.getElementById(id).scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
+    function searchMovies() {
+            var searchQuery = document.getElementById('search-query').value;
+            // URL ko update karo search query ke saath
+            window.location.href = '{% url "search" %}?q=' + searchQuery;
+        }
     </script>
     
 

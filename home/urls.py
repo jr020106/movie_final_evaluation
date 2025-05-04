@@ -24,5 +24,16 @@ urlpatterns = [
     path('MovieFlix/', views.MovieFlix, name='MovieFlix'),
     path('review/', views.review, name='review'),
     path('reveiw/', views.reveiw, name='reveiw'),
+    path('housefull5/', views.housefull5, name='housefull5'),
+    path('avtaar/', views.avtaar, name='avtaar'),
+    path('thuglife/', views.thuglife, name='thuglife'),
+    path('baaghi/', views.baaghi, name='baaghi'),
+    path('search/', views.search_movies, name='search'),
+    path('bhoolchukmaaf/', views.bhoolchukmaaf, name='bhoolchukmaaf'),
+    path('kantarachapter1/', views.kantarachapter1, name='kantarachapter1'),
+    path('F1/', views.F1, name='F1'),
+    path('jb/', views.jb, name='jb'),
+    path('kuberaa/', views.kuberaa, name='kuberaa'),
+    path('aboutus/', views.aboutus, name='aboutus'),
 ]
 

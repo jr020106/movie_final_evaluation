@@ -16,8 +16,12 @@ def topMovies(request):
 
 def login(request):
     return render(request, "login.html")
+def moviedetail(request, movie_slug):
+    movie = get_object_or_404(Movie, slug=movie_slug)
+    return render(request, 'moviedetail.html', {'movie': movie})
 
-
+def cocktail(request):
+    return render(request, "cocktail.html")
 def moviedetail(request, movie_slug):
     # fetch movie from database using slug
     movie = get_object_or_404(Movie, slug=movie_slug)
@@ -74,3 +78,38 @@ def review(request):
     return render(request, "review.html")
 def reveiw(request):
     return render(request, "reveiw.html")
+def housefull5(request):
+    return render(request, 'comming/housefull5.html')
+def avtaar(request):
+    return render(request, 'comming/avtaar.html')
+def thuglife(request):
+    return render(request, 'comming/thuglife.html')
+def baaghi(request):
+    return render(request, 'comming/baaghi.html')
+
+from django.shortcuts import render
+from .models import Movie  # Tumhare Movie model ko import karo
+
+def search_movies(request):
+    query = request.GET.get('q', '')  # URL se query le lo
+    if query:
+        # Movies ko filter karo jo query se match karti ho
+        movies = Movie.objects.filter(title__icontains=query)  # Case-insensitive search
+    else:
+        movies = Movie.objects.all()  # Agar query nahi hai, sab movies dikhao
+
+    return render(request, 'your_template.html', {'movies': movies, 'query': query})
+
+def bhoolchukmaaf(request):
+    return render(request, 'comming/bhoolchukmaaf.html')
+def kantarachapter1(request):
+    return render(request, 'comming/kantarachapter1.html')
+
+def F1(request):
+    return render(request, 'comming/F1.html')
+def jb(request):
+    return render(request, 'comming/jb.html')
+def kuberaa(request):
+    return render(request, 'comming/kuberaa.html')
+def aboutus(request):
+    return render(request, 'aboutus.html')
